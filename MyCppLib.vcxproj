@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a273e9e1-7670-41b7-889b-3f70e00c75ed}</ProjectGuid>
+    <RootNamespace>MyCppLib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ai\tensorflow.hpp" />
+    <ClInclude Include="consolecmd\cmdinput.hpp" />
+    <ClInclude Include="consolecmd\consolecmd.hpp" />
+    <ClInclude Include="data\data.hpp" />
+    <ClInclude Include="graph\color.hpp" />
+    <ClInclude Include="graph\bmpconvert.hpp" />
+    <ClInclude Include="graph\drawmatrix.hpp" />
+    <ClInclude Include="graph\header.hpp" />
+    <ClInclude Include="graph\operation.hpp" />
+    <ClInclude Include="math\math.hpp" />
+    <ClInclude Include="math\simplexparameter.hpp" />
+    <ClInclude Include="MyProject\WebTester.hpp" />
+    <ClInclude Include="struct\stack.hpp" />
+    <ClInclude Include="data\convert.hpp" />
+    <ClInclude Include="cyh.hpp" />
+    <ClInclude Include="data\dictionary.hpp" />
+    <ClInclude Include="data\keyvaluepair.hpp" />
+    <ClInclude Include="data\list.hpp" />
+    <ClInclude Include="struct\linkedlist.hpp" />
+    <ClInclude Include="struct\struct.hpp" />
+    <ClInclude Include="thirdpartylib.hpp" />
+    <ClInclude Include="graph\graph.hpp" />
+    <ClInclude Include="graph\shape.hpp" />
+    <ClInclude Include="data\number.hpp" />
+    <ClInclude Include="struct\basic.hpp" />
+    <ClInclude Include="data\json.hpp" />
+    <ClInclude Include="data\xml.hpp" />
+    <ClInclude Include="includelist.h" />
+    <ClInclude Include="data\coord.hpp" />
+    <ClInclude Include="math\polynomial.hpp" />
+    <ClInclude Include="data\text.hpp" />
+    <ClInclude Include="data\tuples.hpp" />
+    <ClInclude Include="data\datetime.hpp" />
+    <ClInclude Include="cfilesystem\directory.hpp" />
+    <ClInclude Include="multithread\multithread.hpp" />
+    <ClInclude Include="multithread\taskcontrol.hpp" />
+    <ClInclude Include="time\time.hpp" />
+    <ClInclude Include="web\client\udpclient.hpp" />
+    <ClInclude Include="web\curlclient.hpp" />
+    <ClInclude Include="web\curlutilities.hpp" />
+    <ClInclude Include="web\webobj\webform.hpp" />
+    <ClInclude Include="web\web.hpp" />
+    <ClInclude Include="web\webinclude.hpp" />
+    <ClInclude Include="winapi\winapi.hpp" />
+    <ClInclude Include="winapi\header.hpp" />
+    <ClInclude Include="winapi\wnd\baseobj.hpp" />
+    <ClInclude Include="winapi\wnd\objtype.hpp" />
+    <ClInclude Include="winapi\wnd\window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="consolecmd\cmdinput.cpp" />
+    <ClCompile Include="data\convert.cpp" />
+    <ClCompile Include="data\json.cpp" />
+    <ClCompile Include="data\number.cpp" />
+    <ClCompile Include="graph\bmpconvert.cpp" />
+    <ClCompile Include="graph\shape.cpp" />
+    <ClCompile Include="data\xml.cpp" />
+    <ClCompile Include="math\math.cpp" />
+    <ClCompile Include="math\polynomial.cpp" />
+    <ClCompile Include="multithread\multithread.cpp" />
+    <ClCompile Include="winapi\wnd\baseobj.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="data\text.cpp" />
+    <ClCompile Include="data\tuples.cpp" />
+    <ClCompile Include="cfilesystem\directory.cpp" />
+    <ClCompile Include="time\time.cpp" />
+    <ClCompile Include="web\curlclient.cpp" />
+    <ClCompile Include="winapi\winapi.cpp" />
+    <ClCompile Include="winapi\wnd\window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="multithread\MtReadme.txt" />
+    <Text Include="Memo.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

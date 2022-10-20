@@ -1,0 +1,1 @@
+Z:\WorkSpace\CppProject\MyCppLib\x64\Debug\MyCppLib.vcxproj.CopyComplete

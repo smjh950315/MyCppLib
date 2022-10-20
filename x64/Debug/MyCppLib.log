@@ -1,0 +1,405 @@
+﻿  cmdinput.cpp
+  convert.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+  json.cpp
+Z:\WorkSpace\CppProject\MyCppLib\data\json.cpp(152,39): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+  number.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+  bmpconvert.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\graph\bmpconvert.cpp(30,34): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+Z:\WorkSpace\CppProject\MyCppLib\graph\bmpconvert.cpp(30,44): warning C4267: '引數': 將 'size_t' 轉換為 'int'，資料可能遺失
+Z:\WorkSpace\CppProject\MyCppLib\graph\bmpconvert.cpp(41,1): warning C4267: '引數': 將 'size_t' 轉換為 'INT'，資料可能遺失
+  shape.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+  xml.cpp
+  math.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(32,37): warning C4244: '引數': 將 'const double' 轉換為 'size_t'，由於類型不同，可能導致資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(33,29): warning C4244: '引數': 將 'const double' 轉換為 'size_t'，由於類型不同，可能導致資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(36,34): warning C4101: 'FxE': 未參考的區域變數
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(36,14): warning C4101: 'FxL': 未參考的區域變數
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(36,24): warning C4101: 'FxR': 未參考的區域變數
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(37,9): warning C4101: 'L': 未參考的區域變數
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(36,9): warning C4101: 'FxH': 未參考的區域變數
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(36,19): warning C4101: 'FxC': 未參考的區域變數
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(36,29): warning C4101: 'FxB': 未參考的區域變數
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(37,12): warning C4101: 'i': 未參考的區域變數
+Z:\WorkSpace\CppProject\MyCppLib\math\math.cpp(37,6): warning C4101: 'H': 未參考的區域變數
+  polynomial.cpp
+Z:\WorkSpace\CppProject\MyCppLib\math\polynomial.hpp(4,10): warning C4067: 未預期的語彙基元，接著前置處理器指示詞 - 必須是新行
+Z:\WorkSpace\CppProject\MyCppLib\math\polynomial.hpp(5,10): warning C4067: 未預期的語彙基元，接著前置處理器指示詞 - 必須是新行
+  multithread.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+  baseobj.cpp
+Z:\WorkSpace\CppProject\MyCppLib\winapi\wnd\objtype.hpp(62,3): warning C4091: 'static ': 當沒有宣告變數時，忽略 'cyh::winapi::wnd::WndObjType' 的左方
+  Source.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\winapi\wnd\objtype.hpp(62,3): warning C4091: 'static ': 當沒有宣告變數時，忽略 'cyh::winapi::wnd::WndObjType' 的左方
+Z:\_lib\vcpkg\installed\x64-windows\include\iconv.h(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\web\curlutilities.hpp(18,27): warning C4101: 'e': 未參考的區域變數
+  text.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+  tuples.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(267,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(262): message : 編譯 類別 樣板 成員函式 'cyh::data::Vector<unsigned int> cyh::data::Vector<unsigned int>::operator /(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(720): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Vector<unsigned int>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(290,30): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(288): message : 編譯 類別 樣板 成員函式 'void cyh::data::Vector<unsigned int>::Randomize(T)' 期間
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(396,9): warning C4244: 'return': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(391): message : 編譯 類別 樣板 成員函式 'T cyh::data::Matrix<T>::_sigma2(T **,T **,size_t,size_t,size_t)' 期間
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(721): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Matrix<unsigned char>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(500,28): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(497): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<unsigned char> &cyh::data::Matrix<unsigned char>::operator /=(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(508,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(506): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<unsigned char> cyh::data::Matrix<unsigned char>::RotationMatrix(double)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(509,19): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(510,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(511,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(517,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(515): message : 編譯 類別 樣板 成員函式 'void cyh::data::Matrix<unsigned char>::Randomize(T)' 期間
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(267,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(262): message : 編譯 類別 樣板 成員函式 'cyh::data::Vector<int> cyh::data::Vector<int>::operator /(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(722): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Vector<int>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(290,30): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(288): message : 編譯 類別 樣板 成員函式 'void cyh::data::Vector<int>::Randomize(T)' 期間
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(267,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(262): message : 編譯 類別 樣板 成員函式 'cyh::data::Vector<float> cyh::data::Vector<float>::operator /(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(723): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Vector<float>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(290,30): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(288): message : 編譯 類別 樣板 成員函式 'void cyh::data::Vector<float>::Randomize(T)' 期間
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(267,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(262): message : 編譯 類別 樣板 成員函式 'cyh::data::Vector<long> cyh::data::Vector<long>::operator /(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(725): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Vector<long>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(290,30): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(288): message : 編譯 類別 樣板 成員函式 'void cyh::data::Vector<long>::Randomize(T)' 期間
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(267,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(262): message : 編譯 類別 樣板 成員函式 'cyh::data::Vector<char> cyh::data::Vector<char>::operator /(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(726): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Vector<char>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(290,30): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(288): message : 編譯 類別 樣板 成員函式 'void cyh::data::Vector<char>::Randomize(T)' 期間
+          with
+          [
+              T=char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(267,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(262): message : 編譯 類別 樣板 成員函式 'cyh::data::Vector<unsigned char> cyh::data::Vector<unsigned char>::operator /(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(727): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Vector<unsigned char>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(290,30): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(288): message : 編譯 類別 樣板 成員函式 'void cyh::data::Vector<unsigned char>::Randomize(T)' 期間
+          with
+          [
+              T=unsigned char
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(396,9): warning C4244: 'return': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(391): message : 編譯 類別 樣板 成員函式 'T cyh::data::Matrix<T>::_sigma2(T **,T **,size_t,size_t,size_t)' 期間
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(730): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Matrix<unsigned int>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(500,28): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(497): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<unsigned int> &cyh::data::Matrix<unsigned int>::operator /=(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(508,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(506): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<unsigned int> cyh::data::Matrix<unsigned int>::RotationMatrix(double)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(509,19): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(510,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(511,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(517,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(515): message : 編譯 類別 樣板 成員函式 'void cyh::data::Matrix<unsigned int>::Randomize(T)' 期間
+          with
+          [
+              T=unsigned int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(396,9): warning C4244: 'return': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(391): message : 編譯 類別 樣板 成員函式 'T cyh::data::Matrix<T>::_sigma2(T **,T **,size_t,size_t,size_t)' 期間
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(732): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Matrix<int>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(500,28): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(497): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<int> &cyh::data::Matrix<int>::operator /=(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(508,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(506): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<int> cyh::data::Matrix<int>::RotationMatrix(double)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(509,19): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(510,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(511,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(517,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(515): message : 編譯 類別 樣板 成員函式 'void cyh::data::Matrix<int>::Randomize(T)' 期間
+          with
+          [
+              T=int
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(396,9): warning C4244: 'return': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(391): message : 編譯 類別 樣板 成員函式 'T cyh::data::Matrix<T>::_sigma2(T **,T **,size_t,size_t,size_t)' 期間
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(733): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Matrix<float>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(500,28): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(497): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<float> &cyh::data::Matrix<float>::operator /=(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(508,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(506): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<float> cyh::data::Matrix<float>::RotationMatrix(double)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(509,19): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(510,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(511,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(517,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(515): message : 編譯 類別 樣板 成員函式 'void cyh::data::Matrix<float>::Randomize(T)' 期間
+          with
+          [
+              T=float
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(396,9): warning C4244: 'return': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(391): message : 編譯 類別 樣板 成員函式 'T cyh::data::Matrix<T>::_sigma2(T **,T **,size_t,size_t,size_t)' 期間
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(735): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Matrix<long>'
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(500,28): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(497): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<long> &cyh::data::Matrix<long>::operator /=(const double &)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(508,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(506): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<long> cyh::data::Matrix<long>::RotationMatrix(double)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(509,19): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(510,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(511,27): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(517,33): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(515): message : 編譯 類別 樣板 成員函式 'void cyh::data::Matrix<long>::Randomize(T)' 期間
+          with
+          [
+              T=long
+          ]
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(667,7): warning C4244: '引數': 將 'size_t' 轉換為 'const double'，由於類型不同，可能導致資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(665): message : 編譯 類別 樣板 成員函式 'cyh::data::Matrix<unsigned int> cyh::data::Phalanx<unsigned int>::ToMatrixAvg(void)' 期間
+Z:\WorkSpace\CppProject\MyCppLib\data\tuples.cpp(738): message : 請參考正在進行編譯的 類別 樣板 具現化 'cyh::data::Phalanx<unsigned int>'
+  directory.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+  time.cpp
+  curlclient.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\iconv.h(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\web\curlutilities.hpp(18,27): warning C4101: 'e': 未參考的區域變數
+  winapi.cpp
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\winapi\wnd\objtype.hpp(62,3): warning C4091: 'static ': 當沒有宣告變數時，忽略 'cyh::winapi::wnd::WndObjType' 的左方
+  window.cpp
+Z:\WorkSpace\CppProject\MyCppLib\winapi\wnd\objtype.hpp(62,3): warning C4091: 'static ': 當沒有宣告變數時，忽略 'cyh::winapi::wnd::WndObjType' 的左方
+Z:\_lib\vcpkg\installed\x64-windows\include\opencv2\calib3d.hpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+Z:\WorkSpace\CppProject\MyCppLib\winapi\wnd\window.cpp(159,1): warning C4312: '類型轉換': 將 'int' 轉換為較大的 'HMENU'
+Z:\WorkSpace\CppProject\MyCppLib\winapi\wnd\window.cpp(170,1): warning C4312: '類型轉換': 將 'int' 轉換為較大的 'HMENU'
+  正在產生程式碼...
+  MyCppLib.vcxproj -> Z:\WorkSpace\CppProject\x64\Debug\MyCppLib.exe
