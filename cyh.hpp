@@ -6,6 +6,7 @@
 #include "multithread/multithread.hpp"
 #include "struct/struct.hpp"
 #include "time/time.hpp"
+#include "math/math.hpp"
 #include "winapi/winapi.hpp"
 #define SIZEOF(x) cout << setw(10) << "Size of " #x <<": "<< sizeof(x) << endl;
 

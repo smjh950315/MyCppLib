@@ -1,7 +1,7 @@
 #pragma once
 #ifndef CURL_UTILITIES_H
 #define CURL_UTILITIES_H
-#include "webinclude.hpp"
+#include "header.hpp"
 using cyh::data::text;
 
 namespace cyh::web {
@@ -22,7 +22,6 @@ namespace cyh::web {
 			}
 			return newLength;
 		}
-
 		static size_t writer(char* data, size_t size, size_t nmemb, std::string* writerData)
 		{
 			if (writerData == NULL) { return 0; }
@@ -34,6 +33,7 @@ namespace cyh::web {
 			size_t written = fwrite(ptr, size, nmemb, (FILE*)stream);
 			return written;
 		}
+	
 	};
 }
 

@@ -18,19 +18,21 @@ namespace cyh::winapi::wnd {
 		static void CreateImg(text path, HDC hdc);
 		void ScreenShot(HBITMAP* hBitmap, HBITMAP* holdBitmap);
 
-		static void GetInputText(HWND hInput, text& buffer, size_t length);
 		static void ShowMsgBox(HWND hWnd, text msgTitle, text msgText);
 		static void ShowText(HDC hdc, int x, int y, text _text);
-		static void SetText(HWND hWnd, text& _text, int hMenu);
 		static void AddTextToDlg(HWND hEdit, text& _text, int hMenu);
 		static void ChangeButtonText(LPARAM lparam, text& infoText);
 		static void HideItem(HWND hItem);
 		static void ShowItem(HWND hItem);
+
+
+		static void GetText(TextBox* txtBox);
+		static void SetText(TextDisplay* txtBox, text txt);
+
+		static HFONT BasicFont(int _height);
+		static HFONT CustomFont(int _height, text _font);
+		static void SetItemFont(BaseObj* item, HFONT _font);
 	};
-}
-namespace cyh::winapi {
-
-
 }
 
 #endif // !WIN_API_H

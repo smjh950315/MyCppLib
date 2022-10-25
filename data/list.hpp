@@ -1,20 +1,20 @@
 #pragma once
-#ifndef LIST_H
-#define LIST_H
+#ifndef CYH_LIST_H
+#define CYH_LIST_H
 #include "../struct/linkedlist.hpp"
+#include "../struct/iterator.hpp"
 #include <thread>
 using cyh::Struct::ListNode;
 using cyh::Struct::ListNodeOperation;
-
+using cyh::Struct::LNIterator;
 
 namespace cyh::data {
 
 	static const std::string OverRangeException = "List out of range";
-
 	template<class T>
 	class List {
 	protected:
-		using Optn = Struct::ListNodeOperation<T>;		
+		using Optn = Struct::ListNodeOperation<T>;
 		void _add(T& t) {
 			if (data == nullptr) {
 				data = new ListNode<T>(t);
@@ -23,13 +23,28 @@ namespace cyh::data {
 				Length = 1;
 			}
 			else {
-				ListNode<T>* newNode = new ListNode<T>(t);
-				size_t it_to_begin = 0;
-				size_t it_to_end = 0;
-				Optn::AddToEnd(data, newNode);
-				first = Optn::BeginOf(data, &it_to_begin);
-				last = Optn::EndOf(data, &it_to_end);
-				Length = it_to_begin+it_to_end+1;
+				while (data->next != nullptr) {
+					data = data->next;
+				}
+				data->next = new ListNode<T>(t,data);
+				data = data->next;
+				last = data;
+				Length++;
+			}
+		}
+		void _add(ListNode<T>*& node) {
+			if (data == nullptr) {
+				data = node;
+				first = data;
+				last = data;
+				Length = 1;
+			}
+			else {
+				ListNode<T>*& temp = node;
+				Optn::AddToEnd(data, temp);
+				last = data;
+				Optn::IterToEnd(last);
+				Length+=Optn::CountOfNode(node);
 			}
 		}
 		void _remove(ListNode<T>*& node) {
@@ -51,6 +66,7 @@ namespace cyh::data {
 			if (data == nullptr) {
 				return;
 			}
+			Optn::IterToEnd(last);
 			while (last->prev != nullptr) {
 				last = last->prev;
 				delete last->next;
@@ -66,12 +82,34 @@ namespace cyh::data {
 			return nodeI;
 		}
 	public:
-		bool IsEmpty = true;
-		bool UseMt = false;
 		ListNode<T>* first = nullptr;
 		ListNode<T>* data = nullptr;
 		ListNode<T>* last = nullptr;
+		bool IsEmpty = true;
+		bool UseMt = false;
 		size_t Length = 0;
+		LNIterator<T> begin()
+		{
+			if (!first) {
+				ListNode<T>* temp = data;
+				Optn::IterToBegin(temp);
+				first = temp;
+			}
+			return LNIterator<T>(first);
+		}
+		LNIterator<T> end()
+		{
+			return LNIterator<T>(last->next);
+		}
+		T operator[](size_t index) {
+			if (index >= Length) {
+				return {};
+			}
+			else {
+				return *(_get_item_of_index(index));
+			}
+		}
+
 		List() {
 			data = nullptr;
 		}
@@ -87,10 +125,12 @@ namespace cyh::data {
 		void Clear() {
 			_clear();
 		}
+
+
 		void Show() {
 			if (data == nullptr) {
 				std::cout << "[]" << std::endl;
-				return; 
+				return;
 			}
 			ListNode<T>* ptemp = first;
 			std::cout << "[" << (ptemp->data);
@@ -98,7 +138,7 @@ namespace cyh::data {
 				ptemp = ptemp->next;
 				std::cout << "," << ptemp->data;
 			}
-			std::cout << "]" << std::endl;			
+			std::cout << "]" << std::endl;
 		}
 		void rShow() {
 			if (data == nullptr) { return; }
@@ -110,59 +150,8 @@ namespace cyh::data {
 			}
 			std::cout << "]" << std::endl;
 		}
-		T operator[](size_t index) {
-			if (index >= Length) {		
-				return {};
-			}
-			else {
-				return *(_get_item_of_index(index));
-			}
-		}
-		class Iterator
-		{
-		private:
-			const ListNode<T>* m_pCurrentNode;
-		public:
-			Iterator() noexcept :
-				m_pCurrentNode(first) { }
-			Iterator(const ListNode<T>* pNode) noexcept :
-				m_pCurrentNode(pNode) { }
-			Iterator& operator=(ListNode<T>* pNode)
-			{
-				this->m_pCurrentNode = pNode;
-				return *this;
-			}
-			// Prefix ++ overload
-			Iterator& operator++()
-			{
-				if (m_pCurrentNode)
-					m_pCurrentNode = m_pCurrentNode->next;
-				return *this;
-			}
-			// Postfix ++ overload
-			Iterator operator++(int)
-			{
-				Iterator iterator = *this;
-				++* this;
-				return iterator;
-			}
-			bool operator!=(const Iterator& iterator)
-			{
-				return m_pCurrentNode != iterator.m_pCurrentNode;
-			}
-			T operator*()
-			{
-				return m_pCurrentNode->data;
-			}
-		};
-		Iterator begin()
-		{
-			return Iterator(first);
-		}
-		Iterator end()
-		{
-			return Iterator(nullptr);
-		}
+
+
 	};
 }
 #endif

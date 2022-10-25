@@ -106,7 +106,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ai\header.hpp" />
     <ClInclude Include="ai\tensorflow.hpp" />
     <ClInclude Include="consolecmd\cmdinput.hpp" />
     <ClInclude Include="consolecmd\consolecmd.hpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="math\math.hpp" />
     <ClInclude Include="math\simplexparameter.hpp" />
     <ClInclude Include="MyProject\WebTester.hpp" />
+    <ClInclude Include="struct\iterator.hpp" />
     <ClInclude Include="struct\stack.hpp" />
     <ClInclude Include="data\convert.hpp" />
     <ClInclude Include="cyh.hpp" />
@@ -174,14 +176,17 @@
     <ClInclude Include="web\client\udpclient.hpp" />
     <ClInclude Include="web\curlclient.hpp" />
     <ClInclude Include="web\curlutilities.hpp" />
+    <ClInclude Include="web\modify.hpp" />
+    <ClInclude Include="winapi\web\winsockapi.hpp" />
     <ClInclude Include="web\webobj\webform.hpp" />
     <ClInclude Include="web\web.hpp" />
-    <ClInclude Include="web\webinclude.hpp" />
+    <ClInclude Include="web\header.hpp" />
     <ClInclude Include="winapi\winapi.hpp" />
     <ClInclude Include="winapi\header.hpp" />
     <ClInclude Include="winapi\wnd\baseobj.hpp" />
     <ClInclude Include="winapi\wnd\objtype.hpp" />
     <ClInclude Include="winapi\wnd\window.hpp" />
+    <ClInclude Include="winapi\wnd\wndobj.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="consolecmd\cmdinput.cpp" />
@@ -194,6 +199,8 @@
     <ClCompile Include="math\math.cpp" />
     <ClCompile Include="math\polynomial.cpp" />
     <ClCompile Include="multithread\multithread.cpp" />
+    <ClCompile Include="web\modify.cpp" />
+    <ClCompile Include="winapi\web\winsockapi.cpp" />
     <ClCompile Include="winapi\wnd\baseobj.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="data\text.cpp" />
@@ -203,6 +210,7 @@
     <ClCompile Include="web\curlclient.cpp" />
     <ClCompile Include="winapi\winapi.cpp" />
     <ClCompile Include="winapi\wnd\window.cpp" />
+    <ClCompile Include="winapi\wnd\wndobj.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="multithread\MtReadme.txt" />

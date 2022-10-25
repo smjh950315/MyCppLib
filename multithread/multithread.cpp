@@ -1,6 +1,6 @@
-#include "MultiThread.hpp"
-#include "../Data/Number.hpp"
-using cyh::MultiThread::Task;
+#include "multithread.hpp"
+#include "../data/number.hpp"
+using cyh::multithread::Task;
 using cyh::data::Number;
 using std::cout;
 using std::endl;

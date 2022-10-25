@@ -2,7 +2,7 @@
 #ifndef TASK_CTRL_H
 #define TASK_CTRL_H
 
-namespace cyh::MultiThread {
+namespace cyh::multithread {
 	
 	struct TaskCtrlFlag {
 		int* thMax = nullptr;

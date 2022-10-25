@@ -1,6 +1,5 @@
 #include "winapi.hpp"
 using namespace cyh::winapi::wnd;
-
 WndApi::WndApi(HWND hwnd) {
 	hWnd = hwnd;
 }
@@ -62,11 +61,6 @@ void WndApi::ScreenShot(HBITMAP* hBmp, HBITMAP* holdBmp) {
 }
 
 
-
-
-void WndApi::GetInputText(HWND hInput, text& buffer, size_t length) {
-	GetWindowText(hInput, buffer, (int)length);
-}
 void WndApi::ShowMsgBox(HWND hWnd, text msgTitle, text msgText) {
 	MessageBox(hWnd, msgText, msgTitle, MB_OK | MB_ICONINFORMATION);
 }
@@ -74,10 +68,7 @@ void WndApi::ShowText(HDC hdc, int x, int y, text _text) {
 	const wchar_t* txt = (const wchar_t*)_text;
 	TextOut(hdc, x, y, txt, (int)_text.Length);
 }
-void WndApi::SetText(HWND hWnd, text& _text, int hMenu) {
-	const wchar_t* txt = (const wchar_t*)_text;
-	SetDlgItemText(hWnd, hMenu, txt);
-}
+
 void WndApi::AddTextToDlg(HWND hEdit, text& _text, int hMenu) {
 	const wchar_t* txt = (const wchar_t*)_text;
 	size_t TextLen = SendMessage(hEdit, WM_GETTEXTLENGTH, 0, 0);
@@ -93,3 +84,33 @@ void WndApi::HideItem(HWND hItem) {
 void WndApi::ShowItem(HWND hItem) {
 	ShowWindow(hItem, SW_SHOW);
 }
+
+
+void WndApi::GetText(TextBox* tb) {
+	size_t txtLen = GetWindowTextLength(*tb->HObj) + 1;
+	tb->Text = text(' ', txtLen);
+	GetWindowText(*tb->HObj, tb->Text, (int)txtLen);
+}
+void WndApi::SetText(TextDisplay* tb, text txt) {
+	SetWindowText(*tb->HObj, txt);
+}
+HFONT WndApi::BasicFont(int _height) {
+	return CreateFontW(_height, 0, 0, 0, 400,
+		FALSE, FALSE, FALSE,
+		DEFAULT_CHARSET, OUT_DEFAULT_PRECIS,
+		CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY,
+		FIXED_PITCH, TEXT("Consolas")
+	);
+}
+HFONT WndApi::CustomFont(int _height, text _font) {
+	return CreateFontW(_height, 0, 0, 0, 400,
+		FALSE, FALSE, FALSE,
+		DEFAULT_CHARSET, OUT_DEFAULT_PRECIS,
+		CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY,
+		FIXED_PITCH, _font
+	);
+}
+void WndApi::SetItemFont(BaseObj* item, HFONT _font) {
+	SendMessage(*item->HObj, WM_SETFONT, (WPARAM)_font, NULL);
+}
+

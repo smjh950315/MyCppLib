@@ -4,51 +4,40 @@
 #include "../header.hpp"
 #include "objtype.hpp"
 namespace cyh::winapi::wnd {
-	struct ObjPos {
-		int X, Y;
-		ObjPos() :X(0), Y(0) {}
-		ObjPos(int x, int y) :X(x), Y(y) {}
-	};
-	struct ObjSize {
-		int W, H;
-		ObjSize() :W(100), H(100) {}
-		ObjSize(int w, int h) :W(w), H(h) {}
-		void Read(LPARAM lParam) {
-			W = LOWORD(lParam);
-			H = HIWORD(lParam);
-		}
-	};
-	struct ObjView : public ObjPos, public ObjSize {
-		text ObjTitle = "";
-		ObjView() {}
-		ObjView(int x, int y, int w, int h)
-		{
-			X = x, Y = y, W = w, H = w;
-		}
-	};
-	struct ObjData {
-		HWND* hWnd = nullptr;		
-		vector<text> ObjText;
-		int hMenu = 0;
-		ObjData() {}
-	};
 
-	class BaseObj : public ObjView, public ObjData {
+	class ObjSize {
+	public:
+		int W, H;
+	};
+	class WndLayout : public ObjSize {
+	protected:
+		void set(int x, int y, int w, int h, text title, int res_id);
+	public:		
+		int X, Y;
+		text Title;
+		int ResourceId;
+		WndLayout();
+		WndLayout(ObjSize _size, int x, int y, text title);
+		WndLayout(ObjSize _size, int x, int y, text title, int res_id);
+		WndLayout(int x, int y, int w, int h, text title, int res_id);
+	};
+	class BaseObj {
 	protected:
 		void set_view_cfg(int x, int y, int w, int h);
-		void set_view_title(text _title);
+		void set_view_cfg(WndLayout& layout);
+		void set_view_cfg(ObjSize& layout, int x, int y);
+		void set_view_title(text& _title);
+		void set_handler(HWND*& obj_handler);
+		void set_obj_type(ObjType& type);
+		void set_obj_res_id(int res_id);
+		void set(WndLayout _layout, HWND* hObj);
 	public:
+		WndObjType BaseType;
+		HWND* HObj = nullptr;
+		vector<text> ObjText;
 		ObjType TYPE;
+		WndLayout Layout;
 		BaseObj();
-		BaseObj(ObjType obj_type, ObjView view);
-		BaseObj(ObjType obj_type, int x, int y, int w, int h);
-		BaseObj(ObjType obj_type, int x, int y, int w, int h, text _title);
-		BaseObj(ObjType obj_type, HWND* ptr_obj_handler, int x, int y, int w, int h);
-		void SetPos(int x, int y);
-		void SetSize(int w, int h);
-		void SetHMenu(int hmenu);
-		void SetHandler(HWND* hwndPtr);
-		void SetTitle(text _title);
 		operator long() { return TYPE.Id; }
 	};
 }

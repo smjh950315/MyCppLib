@@ -31,7 +31,6 @@ WndClass::WndClass(HINSTANCE _hInstance, LRESULT(*WndProc)(HWND, UINT, WPARAM, L
 	hIconSm = LoadIcon(this->hInstance, IDI_APPLICATION);
 }
 
-
 LRESULT Window::BasicWndMsg(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
 	//PAINTSTRUCT ps;
 	//HDC hdc;
@@ -42,16 +41,9 @@ LRESULT Window::BasicWndMsg(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 		break;
 	case WM_PAINT:
 		break;
+	case WM_INITDIALOG:
+		break;
 	case WM_COMMAND:
-		if (HIWORD(wParam) == CBN_SELCHANGE) {
-			LRESULT ItemIndex = SendMessage((HWND)lParam, (UINT)CB_GETCURSEL,
-				(WPARAM)0, (LPARAM)0);
-			TCHAR  ListItem[256];
-			(TCHAR)SendMessage((HWND)lParam, (UINT)CB_GETLBTEXT,
-				(WPARAM)ItemIndex, (LPARAM)ListItem);
-			//MessageBox(hWnd, (LPCWSTR)ListItem, TEXT("Item Selected"), MB_OK);
-			break;
-		}
 		switch (LOWORD(wParam))
 		{
 		case 9999://btn int
@@ -78,7 +70,6 @@ LRESULT Window::BasicWndMsg(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 }
 void Window::_ptr_initiate() {
 	WndcPtr = new WndClass;
-	Objects = new vector<WndObj>;
 }
 void Window::_wnd_register() {
 	if (!IsInitialized) {
@@ -137,7 +128,7 @@ void Window::_setWndHandler(HWND* hptr) {
 	);
 }
 void Window::_load_object() {
-	for (auto& o : *Objects) {
+	for (auto& o : Objects) {
 		_obj_create(o);
 	}
 }
@@ -146,26 +137,28 @@ void Window::_add_option_to_dropdown_list(HWND* hCbBox,vector<text>& options) {
 		SendMessage(*hCbBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)(const wchar_t*)opt);
 	}
 }
-void Window::_obj_create(BaseObj obj) {
-	if (!obj.hWnd) {
+void Window::_obj_create(BaseObj* obj) {
+	if (!obj->HObj) {
 		CreateWindow(
-			obj.TYPE.lpClassName,
-			obj.ObjTitle,
-			obj.TYPE.dwStyle,
-			obj.X, obj.Y, obj.W, obj.H,
-			hWnd, // Parent window
-			(HMENU)(obj.hMenu), // No menu.
+			obj->TYPE.lpClassName,
+			obj->Layout.Title,
+			obj->TYPE.dwStyle,
+			obj->Layout.X, obj->Layout.Y,
+			obj->Layout.W, obj->Layout.H,
+			hWnd,
+			(HMENU)(obj->Layout.ResourceId),
 			*hInstance,
 			NULL);
 	}
 	else {
-		*(obj.hWnd) = CreateWindow(
-			obj.TYPE.lpClassName,
-			obj.ObjTitle,
-			obj.TYPE.dwStyle,
-			obj.X, obj.Y, obj.W, obj.H,
-			hWnd, // Parent window
-			(HMENU)(obj.hMenu), // No menu.
+		*(obj->HObj) = CreateWindow(
+			obj->TYPE.lpClassName,
+			obj->Layout.Title,
+			obj->TYPE.dwStyle,
+			obj->Layout.X, obj->Layout.Y,
+			obj->Layout.W, obj->Layout.H,
+			hWnd,
+			(HMENU)(obj->Layout.ResourceId),
 			*hInstance,
 			NULL);
 	}
@@ -195,6 +188,7 @@ void Window::Build() {
 	(*WndcPtr) = WndClass(*hInstance, WndProcPtr);
 	(*WndcPtr).lpszClassName = WndCName;
 	IsInitialized = true;
+
 	_wnd_register();
 	_setWndHandler();
 	ShowWindow(hWnd, *nCmdShow);
@@ -210,57 +204,7 @@ void Window::Build() {
 		DispatchMessage(&msg);
 	}
 }
-
-void Window::AddDropdownList(WndObj drop_down_list, HWND* hParent, vector<text>& options) {
-	drop_down_list.TYPE = objType.DropDownList;
-	drop_down_list.hWnd = hParent;
-	drop_down_list.ObjText = options;
-	(*Objects).push_back(drop_down_list);
-}
-void Window::AddDropdownList(int x, int y, int w, int h, HWND* hParent, vector<text>& options) {
-	AddDropdownList(WndObj(objType.DropDownList, x, y, w, h), hParent, options);
+void Window::AddObject(BaseObj* pObj) {
+	Objects.push_back(pObj);
 }
 
-void Window::AddDisplayRegin(WndObj display_region, int hMenu) {
-	display_region.TYPE = objType.MultiLineDisplayRegion;
-	display_region.hMenu = hMenu;
-	(*Objects).push_back(display_region);
-}
-void Window::AddDisplayRegin(int x, int y, int w, int h, int hMenu) {
-	AddDisplayRegin(WndObj(objType.MultiLineDisplayRegion, x, y, w, h), hMenu);
-}
-
-void Window::AddInputBox(WndObj txtInput, HWND* input_hWnd) {
-	txtInput.TYPE = objType.SingleLineTextInput;
-	txtInput.hWnd = input_hWnd;
-	(*Objects).push_back(txtInput);
-}
-void Window::AddInputBox(int x, int y, int w, int h, HWND* input_hWnd) {
-	AddInputBox(WndObj(objType.SingleLineTextInput, x, y, w, h), input_hWnd);
-}
-
-void Window::AddInputBoxMultiLine(WndObj txtInput, HWND* input_hWnd) {
-	txtInput.TYPE = objType.MultiLineTextInput;
-	txtInput.hWnd = input_hWnd;
-	(*Objects).push_back(txtInput);
-}
-void Window::AddInputBoxMultiLine(int x, int y, int w, int h, HWND* input_hWnd) {
-	AddInputBoxMultiLine(WndObj(objType.MultiLineTextInput, x, y, w, h), input_hWnd);
-}
-
-void Window::AddButton(WndObj btn, int hMenu) {
-	btn.TYPE = objType.Button;
-	btn.hMenu = hMenu;
-	(*Objects).push_back(btn);
-}
-void Window::AddButton(int x, int y, int w, int h, text btnTxt, int hMenu) {
-	AddButton(WndObj(objType.Button, x, y, w, h, btnTxt), hMenu);
-}
-
-void Window::AddObject(ObjType type, ObjView vcfg) {
-	WndObj obj(type, vcfg);
-	AddObject(obj);
-}
-void Window::AddObject(WndObj obj) {
-	Objects->push_back(obj);
-}

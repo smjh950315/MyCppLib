@@ -126,7 +126,7 @@ void Directory::SetPath(text path) {
 }
 void Directory::ShowFileList() {
 	try {
-		for (auto f : fs::recursive_directory_iterator(_path.ToWStr())) {
+		for (auto f : fs::recursive_directory_iterator(_path.ToStr())) {
 			cout << f.path().string() << endl;
 		}
 	}
@@ -136,7 +136,7 @@ void Directory::ShowFileList() {
 }
 void Directory::LoadFileInfo() {
 	try {
-		for (auto f : fs::recursive_directory_iterator(_path.ToWStr())) {
+		for (auto f : fs::recursive_directory_iterator(_path.ToStr())) {
 			FileInfo fi;
 			File::_getfi(f, fi);
 			FileList.Add(fi);
@@ -148,7 +148,10 @@ void Directory::LoadFileInfo() {
 }
 void Directory::LogFileInfo(text logFile) {
 	std::ofstream log(logFile.ToStr());
-
+	for (auto fi : FileList) {
+		log << fi.ToXmlStr().ToStr();
+		log << "\n";
+	}
 	log.close();
 }
 void Directory::ClearFileInfo() {

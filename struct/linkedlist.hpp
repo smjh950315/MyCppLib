@@ -5,9 +5,16 @@
 namespace cyh::Struct {
 	//ListNode operation
 	template<class T>
-	class ListNodeOperation {
+	class IterRun {
 	public:
 
+		ListNode<T>* it1;
+		ListNode<T>* it2;
+
+	};
+	template<class T>
+	class ListNodeOperation {
+	public:
 		//=======================TestOK!=======================
 		static void IterToBegin(ListNode<T>*& node) {
 			if (node == nullptr) { return; }
@@ -120,8 +127,17 @@ namespace cyh::Struct {
 			node->prev->next = temp->next;
 			delete temp;
 		}
-		//====================================================
 
+		static size_t CountOfNode(ListNode<T>*& lists) {
+			ListNode<T>* tempB = lists;
+			ListNode<T>* tempE = lists;
+			size_t cBeg = 0;
+			size_t cEnd = 0;
+			IterToBegin(tempB, &cBeg);
+			IterToEnd(tempE, &cEnd);
+			return cBeg + cEnd + 1;
+		}
+		//====================================================
 
 		/*==============operation without check===============*/
 		static void AddToBegin(ListNode<T>*& node, ListNode<T>*& node_add) {
@@ -137,7 +153,6 @@ namespace cyh::Struct {
 			node_add->prev = node;
 		}
 		/********************************************/
-
 
 		/*=====================Not tested yet=======================*/
 		static void FindToBegin(ListNode<T>*& node, T& t, bool* found) {

@@ -7,10 +7,10 @@
 #include <vector>
 #include <iostream>
 #include <ppl.h>
-#include "TaskControl.hpp"
+#include "taskControl.hpp"
 using std::cout;
 using std::endl;
-namespace cyh::MultiThread {
+namespace cyh::multithread {
 	template<class T>
 	class MtTaskMgr;
 	class Task {

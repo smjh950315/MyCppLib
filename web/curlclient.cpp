@@ -124,6 +124,9 @@ void CurlClient::_use_cookie() {
 	}	
 }
 
+void CurlClient::SetUrl(text _url) {
+	Url = _url;
+}
 void CurlClient::HttpGet() {
 	_http_get(nobuf, 0);
 }
@@ -137,4 +140,61 @@ void CurlClient::HttpPost(text content_to_post, text& _buffer) {
 	_http_post(content_to_post, _buffer, 1);
 }
 
+//static method
+void CurlClient::HttpGet(text url, text& buffer, Timer& t) {
+	CURL* curl;
+	struct curl_slist* sList = nullptr;
+	CURLcode res = {};
+	curl_global_init(CURL_GLOBAL_DEFAULT);
+	curl = curl_easy_init();
+	if (curl) {
+		sList = NULL;
+		sList = curl_slist_append(sList, "Content-Type: application/json");
+		curl_easy_setopt(curl, CURLOPT_URL, (const char*)url);
+		std::string temp = "";
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CurlWrite_CallbackFunc_StdString);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &temp);
+		t.Start();
+		res = curl_easy_perform(curl);
+		t.End();
+		buffer = temp;
+		if (res != CURLE_OK) {
+			fprintf(stderr, "curl_easy_perform() failed: %s\n",
+				curl_easy_strerror(res));
+		}
+		curl_easy_cleanup(curl);
+	}
+	curl_global_cleanup();
+}
+void CurlClient::HttpPost(text url, text& content_to_post, text& buffer, Timer& t) {
+	CURL* curl;
+	struct curl_slist* sList = nullptr;
+	CURLcode res = {};
+	curl_global_init(CURL_GLOBAL_DEFAULT);
+	curl = curl_easy_init();
+	if (curl) {
+		sList = NULL;
+		sList = curl_slist_append(sList, "Content-Type: application/json");
+		curl_easy_setopt(curl, CURLOPT_URL, (const char*)url);
+		curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, sList);
+		curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1L);
+		Modify::PureJsonString(content_to_post);
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, (const char*)content_to_post);
+		curl_easy_setopt(curl, CURLOPT_USERAGENT, "curl/7.38.0");
+		std::string temp = "";
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CurlWrite_CallbackFunc_StdString);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &temp);
+		t.Start();
+		res = curl_easy_perform(curl);
+		t.End();
+		buffer = temp;
+		if (res != CURLE_OK) {
+			fprintf(stderr, "curl_easy_perform() failed: %s\n",
+				curl_easy_strerror(res));
+		}
+		curl_easy_cleanup(curl);
+	}
+	curl_global_cleanup();
+}
 

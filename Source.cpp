@@ -1,35 +1,29 @@
-//#define _WINDOWS
 #include "cyh.hpp"
-#include "web/curlclient.hpp"
-//#include "MyProject/WebTester.hpp"
-using namespace cyh::graph;
-using namespace cyh::MultiThread;
-using namespace cyh::Time;
-using namespace cyh::web;
-using namespace cyh::data;
+using cyh::data::text;
+using cyh::math::Polynomial;
 using namespace cyh::cfilesystem;
-//using namespace cyh::winapi;
-//using namespace cyh::winapi::wnd;
-//using namespace cyh::myproject;
-//using namespace cyh::myproject::tester;
-
 int main() {
-	string in = "ABCD";
-	std::reverse(in.begin(), in.end());
-	cout << in << endl;
+
+	Polynomial p("x");
+	p = L"((¥Ò¥Ò+(b*d))+(c/d))";
+
 	system("pause");
 }
-
+//#define _WINDOWS
+//#include "web/curlclient.hpp"
+//#include "MyProject/WebTester.hpp"
+//using namespace cyh::myproject;
+//using namespace cyh::myproject::tester;
+//using namespace cyh::winapi;
+//using namespace cyh::winapi::wnd;
 //int WINAPI WinMain(_In_ HINSTANCE hInstance,
 //	_In_opt_ HINSTANCE hPrevInstance,
 //	_In_ LPSTR     lpCmdLine,
 //	_In_ int       nCmdShow)
 //{
-//
 //	WebTester Wnd(&hInstance, &nCmdShow);
 //	GetInstancePointer(&Wnd);
 //	Wnd.Build();
-//	//system("pause");
 //}
 
 

@@ -3,7 +3,7 @@
 #define INCLUDELIST_H
 #include <iostream>
 #include <typeinfo>
-#include "ThirdPartyLib.hpp"
+#include "thirdpartylib.hpp"
 using std::cout;
 using std::setw;
 using std::endl;

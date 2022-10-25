@@ -1,11 +1,14 @@
 #pragma once
 #ifndef WIN_INCLUDE_H
 #define WIN_INCLUDE_H
-#include "../IncludeList.h"
-#include "../Data/Text.hpp"
+#include "../includeList.h"
+#include "../data/text.hpp"
 #include <commctrl.h>
+#include <WinSock2.h>
+#include <Windows.h>
 #include <windowsx.h>
 #include <windef.h>
+#pragma comment (lib, "Ws2_32.lib")
 #include <objidl.h>
 #include <gdiplus.h>
 #pragma comment(lib,"gdiplus.lib")

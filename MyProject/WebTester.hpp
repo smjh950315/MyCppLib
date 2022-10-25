@@ -17,49 +17,67 @@ namespace cyh::myproject::tester {
 #define IDB_SUBMIT 201
 #define IDB_RESPONSE_RESULT 301
 #define IDB_FUNC_DROPDOWN 501
-
+#define IDB_URL_IN 2000
+#define IDB_JSON_IN 3000
 	using api = WndApi;
 	static int WndW = 800;
 	static int WndH = 600;
 	static TCHAR PClassName[] = L"CyhTester";
 	static TCHAR PTitleName[] = L"Web Tester";
+
+	static text msgbox_title(' ', 256);
+	static text input_buffer(' ', 256);
+	static text json_input_buffer(' ', 10000);
+	static text response_buffer(' ', 10000);
+
+	static HWND hModeBtn;
+	static HWND hSubmitBtn;
 	static HWND hUrlInput;
 	static bool UrlInShow;
 	static HWND hContextOutput;
 	static HWND hContextInput;
-	static text msgbox_title(' ', 256);
-	static text input_buffer(' ', 256);
-	static text json_input_buffer(' ', 10000);
-	static text response_buffer(' ', 10000);		
+
 
 	static LRESULT WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 	static class WebTester : public Window {
 	private:
 	public:
-		//CurlClient curlClient;
+
+		ObjSize sbb = ObjSize(100, 30);
+		ObjSize stbUrl = ObjSize(300,60);
+		ObjSize stbb = ObjSize(300, 400);
+		HFONT default_font = api::BasicFont(16);
+
+		Button* BtnChangeMode = new Button(sbb, 600, 10, "HIDE/SHOW", &hModeBtn, IDB_ADD_INPUT);
+		Button* BtnSubmit = new Button(sbb, 380, 10, "Submit", &hSubmitBtn, IDB_SUBMIT);
+		TextBox* UrlIn = new TextBox(stbUrl,60,10,&hUrlInput,IDB_URL_IN);
+		TextBox* ContextIn = new TextBox(stbb, 60, 100, &hContextInput, IDB_JSON_IN);
+		TextDisplay* ContextDp = new TextDisplay(stbb, 380, 100, &hContextOutput, IDB_RESPONSE_RESULT);
+
 		WebTester(HINSTANCE* _hInstance, int* _nCmdShow) {
 			Configuration(WndW, WndH, PClassName, PTitleName);
 			SetHandlers(_hInstance, _nCmdShow);
 			SetWndProcess(WndProc);
 			Initialization();
 		}
+
 		void Initialization() {
 			DisableResize = true;
-			AddButton(600, 20, 100, 30, L"HIDE/SHOW", IDB_ADD_INPUT);
-			AddInputBoxMultiLine(60, 10, 300, 60, &hUrlInput);
-			AddButton(380, 10, 100, 60, L"Submit", IDB_SUBMIT);
-			AddInputBoxMultiLine(60, 100, 300, 400, &hContextInput);
-			AddDisplayRegin(380, 100, 300, 400, IDB_RESPONSE_RESULT);
+			AddObject(BtnChangeMode);
+			AddObject(BtnSubmit);
+			AddObject(UrlIn);
+			AddObject(ContextDp);
+			AddObject(ContextIn);
 		}
 		void PostJson(HWND hWnd, text _url, text& _json, text& _buffer) {
 			msgbox_title = "Success!  ";
 			Timer t;
-			//cyh::web::CurlClient::HttpPost(_url, _json, _buffer, t);
-			cyh::web::CurlClient::HttpGet(_url, _buffer, t);
+			cyh::web::CurlClient::HttpPost(_url, _json, _buffer, t);
 			msgbox_title += t.DMilliStr();
 			Json js;
 			js.ReadFromText(_buffer);
 			_buffer = js.ToTextByStructForWinApi();
+			api::SetText(ContextDp, ContextDp->Text);
 		}
 	};
 	static WebTester* WTptr;
@@ -75,6 +93,10 @@ namespace cyh::myproject::tester {
 		switch (message)
 		{
 		case WM_CREATE:
+
+			break;
+		case WM_INITDIALOG:
+
 			break;
 		case WM_COMMAND:
 			switch (LOWORD(wParam))
@@ -93,10 +115,10 @@ namespace cyh::myproject::tester {
 				}
 				break;
 			case IDB_SUBMIT:
-				api::GetInputText(hUrlInput, input_buffer, 256);
-				api::GetInputText(hContextInput, json_input_buffer, 1000);
-				WTptr->PostJson(hWnd, input_buffer, json_input_buffer, response_buffer);
-				api::SetText(hWnd, response_buffer, IDB_RESPONSE_RESULT);
+				api::GetText(WTptr->UrlIn);
+				api::GetText(WTptr->ContextIn);
+				WTptr->PostJson(hWnd, WTptr->UrlIn->Text, WTptr->ContextIn->Text, WTptr->ContextDp->Text);				
+				api::ShowMsgBox(hWnd, "rqTime", msgbox_title);
 				break;
 			default:
 				break;
@@ -107,6 +129,9 @@ namespace cyh::myproject::tester {
 		case WM_PAINT:
 			hdc = BeginPaint(hWnd, &ps);
 			api::ShowText(hdc, 20, 20, "Url:");
+			api::SetItemFont(WTptr->UrlIn, WTptr->default_font);
+			api::SetItemFont(WTptr->ContextIn, WTptr->default_font);
+			api::SetItemFont(WTptr->ContextDp, WTptr->default_font);
 			EndPaint(hWnd, &ps);
 			break;
 		case WM_DESTROY:

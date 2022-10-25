@@ -52,8 +52,6 @@ namespace cyh::cfilesystem {
 
 		static std::vector<text> GetAllFileList(text path);
 		static std::vector<FileInfo> GetAllFileInfo(text path);
-
-
 	};
 	class Directory {
 	private:

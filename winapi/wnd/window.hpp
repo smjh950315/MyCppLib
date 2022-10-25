@@ -3,7 +3,7 @@
 #define CYH_WINDOW_H
 #endif // !CYH_WINDOW_H
 #include "../header.hpp"
-#include "baseobj.hpp"
+#include "wndobj.hpp"
 #define WND_DROPDOWN_LIST 10
 #define WND_TYPE_INPUT 100
 #define WND_TYPE_INPUT_MULTILINE 101
@@ -25,8 +25,7 @@ namespace cyh::winapi::wnd {
 	};
 	class WndApi;
 	class Window {
-	protected:
-		using WndObj = cyh::winapi::wnd::BaseObj;		
+	protected:		
 		LRESULT BasicWndMsg(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 		void _ptr_initiate();
 		void _wnd_register();
@@ -35,7 +34,7 @@ namespace cyh::winapi::wnd {
 		void _setWndHandler(HWND* hptr);
 		void _load_object();
 		void _add_option_to_dropdown_list(HWND* hCbBox,vector<text>& options);
-		void _obj_create(BaseObj obj);
+		void _obj_create(BaseObj* obj);
 	public:		
 		int* nCmdShow = nullptr;
 		HINSTANCE* hInstance = nullptr;
@@ -48,34 +47,18 @@ namespace cyh::winapi::wnd {
 		text WndCName = L"defaultClass";
 		text WndTitle = L"";
 		WndSize Size;
-		vector<WndObj>* Objects = nullptr;
+		vector<BaseObj*> Objects;
 		WndObjType objType;
 		LRESULT(*WndProcPtr)(HWND, UINT, WPARAM, LPARAM) = nullptr;
-
+		HFONT hFont=NULL;
 		Window();
 		Window(HINSTANCE* _hInstance, int* _nCmdShow);
+		~Window(){}
 		void Configuration(int w, int h, text wndClass, text title);
 		void SetHandlers(HINSTANCE* _hInstance, int* _nCmdShow);
 		void SetWndProcess(LRESULT(*WndProc)(HWND, UINT, WPARAM, LPARAM));
 		void Build();
-
-		void AddDropdownList(WndObj display_region, HWND* hParent, vector<text>& options);
-		void AddDropdownList(int x, int y, int w, int h, HWND* hParent, vector<text>& options);
-
-		void AddDisplayRegin(WndObj display_region, int hMenu);
-		void AddDisplayRegin(int x, int y, int w, int h, int hMenu);
-	
-		void AddInputBox(WndObj txtInput, HWND* input_hWnd);
-		void AddInputBox(int x, int y, int w, int h, HWND* input_hWnd);
-
-		void AddInputBoxMultiLine(WndObj txtInput, HWND* input_hWnd);
-		void AddInputBoxMultiLine(int x, int y, int w, int h, HWND* input_hWnd);
-
-		void AddButton(WndObj btn, int hMenu);
-		void AddButton(int x, int y, int w, int h, text btnTxt, int hMenu);
-
-		void AddObject(ObjType type, ObjView view_cfg);
-		void AddObject(WndObj type);
+		void AddObject(BaseObj* pObj);
 	};
 
 }

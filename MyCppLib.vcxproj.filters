@@ -117,7 +117,7 @@
     <ClInclude Include="winapi\wnd\window.hpp">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="web\webinclude.hpp">
+    <ClInclude Include="web\header.hpp">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="web\web.hpp">
@@ -157,6 +157,21 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="web\client\udpclient.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="winapi\web\winsockapi.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="web\modify.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="struct\iterator.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="winapi\wnd\wndobj.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\header.hpp">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
@@ -216,6 +231,15 @@
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="graph\bmpconvert.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="winapi\web\winsockapi.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="web\modify.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="winapi\wnd\wndobj.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>

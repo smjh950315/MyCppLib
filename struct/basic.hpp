@@ -55,6 +55,7 @@ namespace cyh::Struct
 		T data;
 		ListNode* prev = nullptr;
 		ListNode* next = nullptr;
+		size_t CountOfRef = 0;
 		ListNode() :data(0) { }
 		ListNode(T t) :data(t) { }
 		ListNode(T t, ListNode* _prev) :data(t), prev(_prev) { }

@@ -1,13 +1,21 @@
 #pragma once
-#ifndef KEY_VALUE_PAIR
-#define KEY_VALUE_PAIR
+#ifndef KEY_VALUE_PAIR_H
+#define KEY_VALUE_PAIR_H
 #include "text.hpp"
 using cyh::data::text;
 
 namespace cyh::data {
+	template<typename key_type, typename val_type>
+	struct KeyValuePairT {
+		key_type Key;
+		val_type Value;
+		KeyValuePairT() {}
+		KeyValuePairT(key_type _key, val_type _val)
+			:Key(_key), Value(_val) {}
+	};
 	struct KeyValuePair {
 		text Key;
-		text Value; 
+		text Value;
 		void SetValue(text _key, text _val) {
 			Key = _key;
 			Value = _val;
